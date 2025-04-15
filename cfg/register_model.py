@@ -1,9 +1,15 @@
-anupam_dir = r"C:\Users\anupa\Desktop\ML_SETUP"
+from dotenv import load_dotenv
+import os
 
+# Load environment variables from .env file
+load_dotenv()
 
-input_dir = r"C:\Users\anupa\Desktop\ML_SETUP"
-training_file = "data.csv"
-output_dir = r"models/"
+anupam_dir = os.getenv("ANUPAM_DIR")
+input_dir = os.getenv("INPUT_DIR")
+training_file = os.getenv("TRAINING_FILE")
+output_dir = os.getenv("OUTPUT_DIR")
+# Parse feature list
+feature_names = os.getenv("FEATURES").split(",")
 
 # input_dir = "/volatile/halld/home/gxproj9/particle-gun-non-linear-FCAL-10122024/root-files"
 # training_file = "particle-neg-all-tkin-theta-26.0-deg.root"
@@ -28,17 +34,7 @@ data_config = {
     'data_path': input_dir + "/" + training_file,
     'output_loc': anupam_dir + "/" + output_dir,
 
-    'feature_names': [
-        'trk_e_fom', 'trk_m_fom', 'trk_pi_fom', 'trk_k_fom', 'trk_p_fom', #5
-        'trk_e_p', 'trk_e_px', 'trk_e_py', 'trk_e_pz', #4
-        'trk_dedx_cdc','trk_dedx_fdc', #2
-        'bcal_e_o_p', 'fcal_e_o_p', #2
-        'trk_N_cell', 'trk_rmsTime', 'trk_sigLong', 'trk_sigTrans', 'trk_bcal_e_preshower', 
-        'trk_bcal_e_l2', 'trk_bcal_e_l3', 'trk_bcal_e_l4', #8
-        'trk_Nblk', 'trk_E1E9', 'trk_E9E25', 'trk_SumU', 'trk_SumV',#5
-        'trk_dedx_tof', 
-        'trk_dedx_sc'
-    ], #5
+    'feature_names': feature_names, #5
 
     'decay_branches': ['eta-to-ggpi0', 'eta-to-pi0pi0pi0', 'eta-to-gg', 'gp-to-pi0pi0p', 
     'gp-to-pi0etap', 'omega-to-gpi0-traj-1.8', 'omega-to-gpi0-traj-6.4'],
