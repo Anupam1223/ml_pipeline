@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Add the project root (one level up from drivers/) to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import pipeline as pipelines
 from cfg.register_model import pipeline_config, model_config, data_config, metric_config, component_names, visualization_config, analysis_config
 import torch
