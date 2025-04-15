@@ -1,4 +1,4 @@
-validation_df.csv
 .env
 models
-
+__pycache__/
+data.csv
