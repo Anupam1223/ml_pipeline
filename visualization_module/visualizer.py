@@ -1,10 +1,10 @@
-from mlflow_jlab.core.visualization_core import Visualization
+from core.visualization_core import Visualization
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 import numpy as np
 from sklearn import metrics
-from mlflow_jlab.utils.config_reader import ConfigReader
-import mlflow_jlab.model_wrapper as wrappers
+from utils.config_reader import ConfigReader
+import model_wrapper as wrappers
 
 
 class AnupamVisualizer(Visualization):

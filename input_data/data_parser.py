@@ -1,5 +1,5 @@
-from mlflow_jlab.core.data_core import Data
-from mlflow_jlab.utils.config_reader import ConfigReader
+from core.data_core import Data
+from utils.config_reader import ConfigReader
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer
 import numpy as np

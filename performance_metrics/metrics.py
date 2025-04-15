@@ -1,5 +1,5 @@
-from mlflow_jlab.core.performance_metrics_core import PerformanceMetrics
-from mlflow_jlab.utils.config_reader import ConfigReader
+from core.performance_metrics_core import PerformanceMetrics
+from utils.config_reader import ConfigReader
 # from scipy.special import softmax
 import numpy as np
 import torch

@@ -248,28 +248,28 @@ class AnupamNet(nn.Module,ModelWrapper):
         scripted_anupam = torch.jit.script(self.wrapped_model)
         scripted_anupam.save(path+'.pt')
 
-        # code for writing in ONNX format
-        # Create a dummy input with the shape that your model expects
-        input_shape = (self.n_inputs,)
-        dummy_input = torch.randn(1, *input_shape).to(self.device)  # replace `input_shape` with actual input dimensions
+        # # code for writing in ONNX format
+        # # Create a dummy input with the shape that your model expects
+        # input_shape = (self.n_inputs,)
+        # dummy_input = torch.randn(1, *input_shape).to(self.device)  # replace `input_shape` with actual input dimensions
 
-        onnx_path = path + ".onnx"
-        print(f"Exporting model to ONNX format at {onnx_path}...")
+        # onnx_path = path + ".onnx"
+        # print(f"Exporting model to ONNX format at {onnx_path}...")
 
-        # Export to ONNX
-        torch.onnx.export(
-            self.wrapped_model,         # Model to export
-            dummy_input,                # Dummy input tensor
-            onnx_path,                  # Output file path for ONNX
-            export_params=True,         # Store the trained parameters
-            opset_version=11,           # ONNX version
-            do_constant_folding=True,   # Optimize constant expressions
-            input_names=["input"],      # Input node name
-            output_names=["output"],    # Output node name
-            dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}}  # Support variable batch sizes
-        )
+        # # Export to ONNX
+        # torch.onnx.export(
+        #     self.wrapped_model,         # Model to export
+        #     dummy_input,                # Dummy input tensor
+        #     onnx_path,                  # Output file path for ONNX
+        #     export_params=True,         # Store the trained parameters
+        #     opset_version=11,           # ONNX version
+        #     do_constant_folding=True,   # Optimize constant expressions
+        #     input_names=["input"],      # Input node name
+        #     output_names=["output"],    # Output node name
+        #     dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}}  # Support variable batch sizes
+        # )
 
-        print(f"Model successfully exported to ONNX format at {onnx_path}")
+        # print(f"Model successfully exported to ONNX format at {onnx_path}")
     #*****************************
 
     # Compute the jef objective:

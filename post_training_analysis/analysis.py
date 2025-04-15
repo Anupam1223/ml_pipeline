@@ -1,5 +1,5 @@
-from mlflow_jlab.core.post_training_analysis_core import PostTrainingAnalysis
-from mlflow_jlab.utils.config_reader import ConfigReader
+from core.post_training_analysis_core import PostTrainingAnalysis
+from utils.config_reader import ConfigReader
 import torch
 import pandas as pd
 import matplotlib.pyplot as plt
