@@ -1,4 +1,4 @@
-anupam_dir = "/work/halld/home/anupam/pinn-halld"
+anupam_dir = "C:\Users\anupa\Desktop\ML_SETUP"
 
 # input_dir = "/work/halld/home/ijaegle/particle-gun-non-linear-FCAL-17052024/"
 # training_file = "combined-all-pos-charged-particles-all-tkin-1degree-corr.root"

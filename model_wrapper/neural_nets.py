@@ -1,7 +1,7 @@
-from mlflow_jlab.core.model_wrapper_core import ModelWrapper
-from mlflow_jlab.utils.torch_utils.torch_net_configurator import TorchNetConfigurator
-from mlflow_jlab.utils.torch_utils.torch_gradient_monitor import WeightGradientMonitor
-from mlflow_jlab.utils.config_reader import ConfigReader
+from core.model_wrapper_core import ModelWrapper
+from utils.torch_utils.torch_net_configurator import TorchNetConfigurator
+from utils.torch_utils.torch_gradient_monitor import WeightGradientMonitor
+from utils.config_reader import ConfigReader
 from torchmetrics import MeanMetric, Accuracy
 import torch
 from torch import nn
