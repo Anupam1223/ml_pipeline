@@ -11,10 +11,6 @@ output_dir = os.getenv("OUTPUT_DIR")
 # Parse feature list
 feature_names = os.getenv("FEATURES").split(",")
 
-# input_dir = "/volatile/halld/home/gxproj9/particle-gun-non-linear-FCAL-10122024/root-files"
-# training_file = "particle-neg-all-tkin-theta-26.0-deg.root"
-# output_dir = "gluex-26-27122024-4nn-f29b-nn-neg/new/"
-
 pipeline_config = {
     'output_loc': anupam_dir + "/" + output_dir,
     'write_model_to_file': True,
